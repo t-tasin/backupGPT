@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Chat Finder",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "tabs", "scripting"],
+  "description": "Save and track ChatGPT links!",
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.chat.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
+      
+
